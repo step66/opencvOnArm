@@ -1,3 +1,4 @@
+#!/bin/bash -x
 # This script installs opencv 3.1.0 onto an x64 device
 # Taken from http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/
 # Change permissions first with: chmod 0755 opencv-on-x64.sh
