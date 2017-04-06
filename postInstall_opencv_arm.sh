@@ -41,7 +41,7 @@ make
 
 sudo make install
 sudo ldconfig
-
+#stuck
 ls -l /usr/local/lib/python2.7/site-packages/
 
 cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
