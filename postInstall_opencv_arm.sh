@@ -1,5 +1,6 @@
 # This script installs opencv 3.1.0 onto an x64 device
 # Taken from http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
+# Error during make: protobuf unable to be used
 # Change permissions first with: chmod 0755 opencv-on-x64.sh
 # Then run with: ./opencv-on-x64.sh
 
