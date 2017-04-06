@@ -4,7 +4,7 @@
 #Run this script with: ./postInstall_opencv_arm.sh
 
 echo "Running script ........."
-sudo apt-get install gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf pkg-config libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev
+sudo apt-get install cmake gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf pkg-config libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev
 cd ~
 git clone https://github.com/opencv/opencv.git
 cd ~/opencv/platforms/linux
