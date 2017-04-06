@@ -43,5 +43,3 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
-* Inspiration
-* etc
