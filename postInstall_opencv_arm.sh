@@ -8,15 +8,15 @@ sudo apt-get install build-essential cmake git pkg-config libjpeg8-dev libtiff4-
 #Set up pip and venv
 #wget https://bootstrap.pypa.io/get-pip.py
 #sudo python get-pip.py
-sudo pip install virtualenv virtualenvwrapper
+#sudo pip install virtualenv virtualenvwrapper
 #sudo rm -rf ~/.cache/pip
 
-echo -e "\n# virtualenv and virtualenvwrapper" >> ~/.bashrc
-echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.bashrc
-echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
-source ~/.bashrc
-mkvirtualenv cv 
-workon cv
+#echo -e "\n# virtualenv and virtualenvwrapper" >> ~/.bashrc
+#echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.bashrc
+#echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
+#source ~/.bashrc
+#mkvirtualenv cv 
+#workon cv
 
 #pip install numpy
 
