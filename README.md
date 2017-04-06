@@ -1,6 +1,6 @@
-# Installing opencv On AARCH64
+# Installing opencv on AArch64 
 
-This is a script to install opencv on an arm64 device. Because I am lazy. 
+This is a script to install opencv on an AArch64 device. Because I am lazy. 
 
 ## Getting Started
 
