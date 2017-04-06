@@ -1,4 +1,5 @@
-#This is JTK's post install script for opencv on AARCH64 
+#This is a post install script for opencv on AARCH64 
+#Instructions from http://docs.opencv.org/2.4/doc/tutorials/introduction/crosscompilation/arm_crosscompile_with_cmake.html
 #Set the required permissions first by doing: chmod 0755 postInstall_opencv_arm.sh 
 #Run this script with: ./postInstall_opencv_arm.sh
 
