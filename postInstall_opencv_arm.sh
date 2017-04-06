@@ -1,14 +1,54 @@
-#This is a post install script for opencv on AARCH64 
-#Instructions from http://docs.opencv.org/2.4/doc/tutorials/introduction/crosscompilation/arm_crosscompile_with_cmake.html
-#Set the required permissions first by doing: chmod 0755 postInstall_opencv_arm.sh 
-#Run this script with: ./postInstall_opencv_arm.sh
+# This script installs opencv 3.1.0 onto an x64 device
+# Taken from http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
+# Change permissions first with: chmod 0755 opencv-on-x64.sh
+# Then run with: ./opencv-on-x64.sh
 
-echo "Running script ........."
-sudo apt-get install cmake gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf pkg-config libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev
+sudo apt-get install build-essential cmake pkg-config libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev libatlas-base-dev gfortran python2.7-dev python3-dev
+
 cd ~
-git clone https://github.com/opencv/opencv.git
-cd ~/opencv/platforms/linux
-mkdir -p build_hardfp
-cd build_hardfp
-cmake -DCMAKE_TOOLCHAIN_FILE=../arm-gnueabi.toolchain.cmake ../../..
+wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
+unzip opencv.zip
+
+wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
+unzip opencv_contrib.zip
+
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+
+sudo pip install virtualenv virtualenvwrapper
+sudo rm -rf ~/.cache/pip
+
+echo -e "\n# virtualenv and virtualenvwrapper" >> ~/.profile
+echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.profile
+echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.profile
+
+source ~/.profile
+
+mkvirtualenv cv -p python2
+
+workon cv
+
+pip install numpy
+
+cd ~/opencv-3.1.0/
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.1.0/modules \
+    -D BUILD_EXAMPLES=ON ..
+
 make
+
+sudo make install
+sudo ldconfig
+
+ls -l /usr/local/lib/python2.7/site-packages/
+
+cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
+ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
+
+source ~/.profile 
+workon cv
+python
