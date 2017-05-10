@@ -4,7 +4,9 @@
 # Change permissions first with: chmod 0755 opencv-on-x64.sh
 # Then run with: ./opencv-on-x64.sh
 
-sudo apt-get install build-essential cmake git pkg-config libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev libgtk2.0-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libatlas-base-dev gfortran
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install build-essential cmake git pkg-config libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev libgtk2.0-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libatlas-base-dev gfortran -y
 
 #Set up pip and venv
 #wget https://bootstrap.pypa.io/get-pip.py
