@@ -6,7 +6,7 @@
 
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install build-essential cmake git pkg-config libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev libgtk2.0-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libatlas-base-dev gfortran -y
+sudo apt-get install build-essential cmake git python2.7-dev pkg-config libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev libgtk2.0-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libatlas-base-dev gfortran -y
 
 #Set up pip and venv
 wget https://bootstrap.pypa.io/get-pip.py
